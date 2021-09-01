@@ -45,4 +45,23 @@ RUN apk -U upgrade && apk add --no-cache \
     && rm -rf /var/cache/apk/* \
     && echo 'export PS1="[docker@network-tools]\$ "' >> /root/.bash_profile
 
+# RUN mkdir /home/awssec/
+
+# # Set up AWS CLI in a virtualenv; system-wide autocomplete
+# WORKDIR /home/awssec/
+# RUN python3 -m venv awscli && \
+#     echo complete -C /home/awssec/awscli/bin/aws_completer aws > ~/.bashrc && \
+#     source /home/awssec/awscli/bin/activate && \
+#     pip3 install --upgrade awscli && \
+#     deactivate
+
+# # Set up AWS Shell in a virtualenv
+# RUN python3 -m venv awsshell && \
+#     source /home/awssec/awsshell/bin/activate && \
+#     pip3 install --upgrade aws-shell && \
+#     deactivate
+
+# Install Prowler (https://github.com/toniblyx/prowler)
+RUN git clone https://github.com/toniblyx/prowler.git prowler
+
 CMD ["/bin/bash", "--login", "-i"]
