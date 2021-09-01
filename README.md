@@ -116,7 +116,7 @@
 To use the tools in a new container from a terminal session:
 
 ```bash
-docker run --rm -it network-tools:dev
+docker run --rm -it brianmcmaster/network-tools
 ```
 
 **Docker Run Options:**
@@ -135,7 +135,7 @@ See [Docker Run Options documentation] for more options.
 Use [Nmap](https://nmap.org/) to scan for devices on a local network (10.0.10.0/24):
 
 ```console
-$ docker run --rm -it network-tools:dev
+$ docker run --rm -it brianmcmaster/network-tools
 [docker@network-tools]$ nmap -v 10.0.10.0/24
 Starting Nmap 7.91 ( https://nmap.org ) at 2021-04-26 15:32 UTC
 Initiating Ping Scan at 15:32
